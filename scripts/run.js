@@ -1,7 +1,7 @@
 const main = async () => {
   const [owner, randomPerson] = await hre.ethers.getSigners();
   const domainContractFactory = await hre.ethers.getContractFactory("Domains");
-  const domainContract = await domainContractFactory.deploy("wew");
+  const domainContract = await domainContractFactory.deploy("climb");
   await domainContract.deployed();
   console.log("Contract deployed to:", domainContract.address);
   console.log("Contract deployed by:", owner.address);
@@ -10,6 +10,7 @@ const main = async () => {
     value: hre.ethers.utils.parseEther("0.1"),
   });
   await txn.wait();
+
   const address = await domainContract.getAddress("robots");
   console.log("Owner of robots domain:", address);
 
