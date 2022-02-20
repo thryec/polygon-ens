@@ -6,11 +6,17 @@ const main = async () => {
   console.log("Contract deployed to:", domainContract.address);
   console.log("Contract deployed by:", owner.address);
 
-  const txn = await domainContract.register("helloworld");
+  let txn = await domainContract.register("helloworld");
   await txn.wait();
 
   const domainOwner = await domainContract.getAddress("helloworld");
   console.log("Owner of domain:", domainOwner);
+
+  txn = await domainContract.setRecord(
+    "helloworld",
+    "setting record for helloworld"
+  );
+  await txn.wait();
 };
 
 const runMain = async () => {
