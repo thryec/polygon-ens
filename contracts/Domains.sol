@@ -31,6 +31,7 @@ contract Domains is ERC721URIStorage {
     {
         tld = _tld;
         console.log("%s name service deployed", _tld);
+        console.log("test");
     }
 
     function register(string calldata name) public payable {
