@@ -22,7 +22,7 @@ module.exports = {
   networks: {
     mumbai: {
       url: process.env.ALCHEMY_MUMBAI_URL,
-      accounts: process.env.TEST_WALLET_PRIVATE_KEY,
+      accounts: [process.env.TEST_WALLET_PRIVATE_KEY],
     },
   },
 };

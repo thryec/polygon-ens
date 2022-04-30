@@ -11,7 +11,7 @@ const main = async () => {
   });
   await txn.wait();
 
-  const address = await domainContract.getAddress("robots");
+  const address = await domainContract.getAddress("dev");
   console.log("Owner of dd domain:", address);
 
   const balance = await hre.ethers.provider.getBalance(domainContract.address);
